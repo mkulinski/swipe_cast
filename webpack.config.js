@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 const PATHS = {
@@ -27,18 +26,21 @@ module.exports = {
     preLoaders: [
       {
         test: /\.(js|jsx)$/,
-        loaders: ['eslint-loader'],
+        loaders: ["eslint-loader"],
         exclude: /node_modules/,
       },
     ],
     loaders: [
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
+        loader: "file?name=[name].[ext]",
       }, {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loaders: ["babel-loader"],
+      }, {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
       },
     ],
   },
