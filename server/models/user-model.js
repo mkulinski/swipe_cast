@@ -2,15 +2,26 @@ const Sequelize = require('sequelize');
 const dbUrl = 'postgres://localhost:5432/podcast';
 const sequelize = new Sequelize(dbUrl);
 
-const User = sequelize.define('users_tb', {
+const User = sequelize.define('users', {
+  uid: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   username: {
-    type: Sequelize.VARCHAR,
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: { notEmpty: true },
   },
   password: {
-    type: Sequelize.VARCHAR,
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: { notEmpty: true },
   },
   email: {
-    type: Sequelize.VARCHAR,
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: { notEmpty: true },
   },
 });
 
