@@ -45,9 +45,12 @@
   },
   "dependencies": {
     "cors": "^2.8.1",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
-    "redux": "^2.0.0"
+    "redux": "^2.0.0",
+    "sequelize": "^3.24.6"
   }
 }
