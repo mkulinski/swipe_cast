@@ -3,13 +3,15 @@ const lightGold = '#aa9260';
 const textGrey = '#707070';
 const textBlack = '#282828';
 
-module.export = {
+const styles = {
   headings: {
     color: lightGold,
     fontFamily: 'Open Sans, sans-serif',
   },
   text: {
-    color: textBlack,
+    color: darkGold,
     fontFamily: 'Roboto, sans-serif',
   },
 };
+
+module.exports = styles;
