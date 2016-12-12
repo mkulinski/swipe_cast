@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from '../stylesheets/mainStyle';
 
-const App = () => {
+const Flip = () => {
   return (
     <div style={styles.text}>
-      Main App Container
+      <h1>Flip Through</h1>
     </div>
   );
 };
 
-export default App;
+export default Flip;
