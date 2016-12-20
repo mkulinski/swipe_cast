@@ -13,9 +13,9 @@ podcastCtrl.addPodcast = (req, res) => {
   User.find({
     where: { username: 'nopmike' },
   })
-    .then(function(user) {
+    .then((user) => {
       console.log('found johny', user)
-      Podcast.findAll({ where: { name: 'The Changelog' } }).then(function(podcast){
+      Podcast.findAll({ where: { name: 'The Changelog' } }).then((podcast) => {
         console.log('did something');
         user.setPodcasts(podcast);
       });
