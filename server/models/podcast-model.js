@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const dbUrl = 'postgres://localhost:5432/podcast';
 const sequelize = new Sequelize(dbUrl);
-const User = require('./user-model');
 
 const Podcast = sequelize.define('podcasts', {
   uid: {
