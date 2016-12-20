@@ -44,6 +44,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "cors": "^2.8.1",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
