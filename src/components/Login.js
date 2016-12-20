@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { verifyUser, addUser } from '../actions/userActions';
 import styles from '../stylesheets/mainStyle';
 
 const Login = () => {
@@ -9,4 +11,13 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (store) => { store };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addUser: userInfo => dispatch(addUser(userInfo)),
+    verifyUser: userInfo => dispatch(verifyUser(userInfo)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
