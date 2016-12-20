@@ -3,13 +3,13 @@ const User = require('../models/user-model');
 
 const podcastCtrl = {};
 
-podcastCtrl.getAllPodcasts = (req, res, next) =>
+podcastCtrl.getAllPodcasts = (req, res) =>
   Podcast.findAll()
   .then(podcasts =>
     console.log(podcasts)
   );
 
-podcastCtrl.addPodcast = (req, res, next) => {
+podcastCtrl.addPodcast = (req, res) => {
   User.find({
     where: { username: 'nopmike' },
   })
