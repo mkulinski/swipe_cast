@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { verifyUser, addUser } from '../actions/userActions';
+// import { connect } from 'react-redux';
+// import { verifyUser, addUser } from '../actions/userActions';
 import styles from '../stylesheets/mainStyle';
 
 const Login = () => {
@@ -11,13 +11,15 @@ const Login = () => {
   );
 };
 
-const mapStateToProps = (store) => { store };
+// const mapStateToProps = (store) => { store };
+//
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addUser: userInfo => dispatch(addUser(userInfo)),
+//     verifyUser: userInfo => dispatch(verifyUser(userInfo)),
+//   };
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addUser: userInfo => dispatch(addUser(userInfo)),
-    verifyUser: userInfo => dispatch(verifyUser(userInfo)),
-  };
-};
+export default Login;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);
