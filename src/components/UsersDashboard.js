@@ -21,7 +21,7 @@ class UsersDashboard extends Component {
   }
 }
 
-const mapStateToProps = (store) => { store };
+const mapStateToProps = (store) => store;
 
 const mapDispatchToProps = (dispatch) => {
   return {
