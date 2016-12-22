@@ -21,6 +21,15 @@ const routes = {
   },
 }
 
+const { routerEnhancer, routerMiddleware } = routerForBrowser({ routes });
 
 
-export const store = createStore(reducers, defaultState);
+
+export const store = createStore(
+  reducers,
+  defaultState,
+  compose(
+    routerEnhancer,
+    applyMiddleWare(routerMiddleware)
+  )
+);
