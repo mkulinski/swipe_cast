@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleWare } from 'redux';
 import reducers from './reducers/reducers';
 
 const defaultState = {
