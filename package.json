@@ -51,7 +51,8 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
-    "redux": "^2.0.0",
+    "redux": "^3.6.0",
+    "redux-little-router": "^12.1.1",
     "sequelize": "^3.24.6"
   }
 }
