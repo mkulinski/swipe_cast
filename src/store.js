@@ -1,4 +1,5 @@
-import { createStore, applyMiddleWare } from 'redux';
+import { compose, createStore, applyMiddleWare } from 'redux';
+import { routerForBrowser } from 'redux-little-router';
 import reducers from './reducers/reducers';
 
 const defaultState = {
@@ -7,5 +8,19 @@ const defaultState = {
     loggedIn: false,
   },
 };
+
+const routes = {
+  '/': {
+    title: 'Home'
+  },
+  '/podcasts': {
+    title: 'All Podcasts'
+  },
+  '/podcasts/:user': {
+    title: 'Users Podcasts'
+  },
+}
+
+
 
 export const store = createStore(reducers, defaultState);
