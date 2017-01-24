@@ -11,18 +11,25 @@ const defaultState = {
 
 const routes = {
   '/': {
-    title: 'Home'
+    title: 'Home',
   },
   '/podcasts': {
-    title: 'All Podcasts'
+    title: 'All Podcasts',
   },
   '/podcasts/:user': {
-    title: 'Users Podcasts'
+    title: 'Users Podcasts',
   },
-}
+};
 
-const { routerEnhancer, routerMiddleware } = routerForBrowser({ routes });
-
+const {
+  routerEnhancer,
+  routerMiddleware,
+} = routerForBrowser({
+  // The configured routes. Required.
+  routes,
+  // The basename for all routes. Optional.
+  basename: '/',
+});
 
 
 const store = createStore(
