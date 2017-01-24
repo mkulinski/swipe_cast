@@ -1,54 +1,50 @@
 const path = require('path');
 
-const PATHS = {
-  app: './src/index.js',
-  html: './src/index.html',
-  dist: path.join(__dirname, 'dist'),
-};
-
 module.exports = {
-  entry: {
-    javascript: PATHS.app,
-    html: PATHS.html,
-  },
+  context: __dirname,
+  entry: './src/index.js',
+  devtool: 'eval',
   output: {
-    path: PATHS.dist,
-    publicPath: '/',
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
-  devServer: {
-    contentBase: PATHS.dist,
+  resolve: {
+    // resolves import blah from 'blah' - so you dont have to say .js
+    extensions: ['js', 'jsx', '.json'],
   },
-  eslint: {
-    emitWarning: true,
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true,
   },
   module: {
-    preLoaders: [
+    rules: [
       {
-        test: /\.(js|jsx)$/,
-        loaders: ['eslint-loader'],
         exclude: /node_modules/,
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: [
+          // inject styles into bundle.js
+          'style-loader',
+          {
+            // lets webpack read css
+            loader: 'css-loader',
+            // prevents webpack injecting images into bundle.js
+            options: {
+              url: false,
+            },
+          },
+        ],
       },
     ],
-    loaders: [
-      {
-        test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      }, {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader'],
-      }, {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-      },
-    ],
-  },
-  externals: {
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true,
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
   },
 };
+
+//
+// {
+//   test: /\.scss$/,
+//   loaders: ['style', 'css', 'sass'],
+// },
