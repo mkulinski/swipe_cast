@@ -15,9 +15,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './src')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './../src/index.html'));
-});
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './../src/index.html')));
 
 app.get('/api/users', userCtrl.getAllUsers);
 app.get('/api/podcasts', podcastCtrl.getAllPodcasts);
